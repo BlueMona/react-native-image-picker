@@ -551,7 +551,7 @@ RCT_EXPORT_METHOD(showImagePicker:(NSDictionary *)options callback:(RCTResponseS
     if (status == PHAuthorizationStatusAuthorized) {
         callback(YES);
         return;
-    } else if (status == PHAuthorizationStatusNotDetermined) {
+    } else {
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             if (status == PHAuthorizationStatusAuthorized) {
                 callback(YES);
@@ -562,9 +562,6 @@ RCT_EXPORT_METHOD(showImagePicker:(NSDictionary *)options callback:(RCTResponseS
                 return;
             }
         }];
-    }
-    else {
-        callback(NO);
     }
 }
 
