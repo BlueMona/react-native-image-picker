@@ -269,6 +269,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
       case REQUEST_LAUNCH_IMAGE_CAPTURE:
         uri = cameraCaptureURI;
         this.fileScan(uri.getPath());
+        response.putBoolean("isAndroidCamera", true);
         break;
       case REQUEST_LAUNCH_IMAGE_LIBRARY:
         uri = data.getData();
