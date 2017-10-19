@@ -157,6 +157,9 @@ public class ImagePickerModule extends ReactContextBaseJavaModule implements Act
     }
 
     if (!permissionsCheck(currentActivity)) {
+      response.putBoolean("didRequestPermission", true);
+      response.putString("option", "launchCamera");
+      callback.invoke(response);
       return;
     }
 
