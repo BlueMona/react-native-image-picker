@@ -64,11 +64,6 @@ public class ButtonsHelper
             result.add(customButtons.get(i).title);
         }
 
-        if (btnCancel != null)
-        {
-            result.add(btnCancel.title);
-        }
-
         return result;
     }
 
@@ -91,11 +86,6 @@ public class ButtonsHelper
             result.add(customButtons.get(i).action);
         }
 
-        if (btnCancel != null)
-        {
-            result.add(btnCancel.action);
-        }
-
         return result;
     }
 
@@ -113,7 +103,7 @@ public class ButtonsHelper
                                                     @NonNull final String key,
                                                     @NonNull final String action)
     {
-        if (!ReadableMapUtils.hasAndNotEmpty(options, key))
+        if (!ReadableMapUtils.hasAndNotEmptyString(options, key))
         {
             return null;
         }
